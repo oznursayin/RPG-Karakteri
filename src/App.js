@@ -46,15 +46,15 @@ export default function App() {
   /* ️⬇️️ ------------------ Kodunuzu aşağıya yazın -----------------️️ ⬇️️ */
 
   const [characterData, setCharacterData] = useState({
-    hat: true,
+    hat: false,
     shield: true,
-    weapon: "staff",
+    weapon: "sword",
     name: namesList[0],
     attackOptions: attackOptionsList.slice(0, 6),
     stats: {
-      hp: 75,
-      mp: 50,
-      strength: 99,
+      hp: 45,
+      mp: 20,
+      strength: 70,
     },
   })
   /* ------------------------------------------------------------------
