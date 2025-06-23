@@ -1,13 +1,13 @@
-import './styles.css'
-import { useState } from 'react'
+import "./styles.css"
+import { useState } from "react"
 
-import noCharacter from './utilities/noCharacter'
-import Character from './components/Character'
-import StatusBars from './components/StatusBars'
-import Options from './components/Options'
-import Button from './components/Button'
-import attackOptionsList from './data/attackOptionsList'
-import namesList from './data/namesList'
+import noCharacter from "./utilities/noCharacter"
+import Character from "./components/Character"
+import StatusBars from "./components/StatusBars"
+import Options from "./components/Options"
+import Button from "./components/Button"
+import attackOptionsList from "./data/attackOptionsList"
+import namesList from "./data/namesList"
 
 export default function App() {
   /* Challenge
@@ -45,6 +45,14 @@ export default function App() {
 
   /* ️⬇️️ ------------------ Kodunuzu aşağıya yazın -----------------️️ ⬇️️ */
 
+  const [characterData, setCharacterData] = useState({
+    hat: "true",
+    shield: "false",
+    weapon: "sword",
+    name: nameList[0],
+    attackOptions: attackOptionsList.slice(0, 6),
+    stats: { hp: 99, mp: 50, strength: 40 },
+  })
   /* ------------------------------------------------------------------
 
   
@@ -55,20 +63,20 @@ export default function App() {
 
   let dataToUse, functionToUse
 
-  if (typeof characterData !== 'undefined') {
+  if (typeof characterData !== "undefined") {
     dataToUse = characterData
   } else {
     dataToUse = noCharacter.noData
   }
 
-  if (typeof setCharacterData !== 'undefined') {
+  if (typeof setCharacterData !== "undefined") {
     functionToUse = setCharacterData
   } else {
     functionToUse = noCharacter.noFunction
   }
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <StatusBars characterData={dataToUse} />
 
       <Character characterData={dataToUse} />
